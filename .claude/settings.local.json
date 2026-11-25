@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dotnet build:*)",
+      "Bash(c:/WorkingFolder/tailwindcss-windows-x64.exe -i AussieBankFeeds/Tailwind/input.css -o AussieBankFeeds/wwwroot/style.css --minify)",
+      "Bash(c:/WorkingFolder/tailwindcss-windows-x64.exe -i Tailwind/input.css -o wwwroot/style.css --minify)",
+      "WebFetch(domain:api.basiq.io)",
+      "WebFetch(domain:www.manager.io)",
+      "Read(//c/WorkingFolder/**)",
+      "Bash(./tailwindcss-windows-x64.exe -i AussieBankFeeds/Tailwind/input.css -o AussieBankFeeds/wwwroot/style.css --minify)"
+    ]
+  }
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{#
+    Front matter read here:
+      title        shown as "<title> — AussieBankFeeds"
+      metaTitle    replaces the whole <title> when the page needs different wording
+      description  meta description, plain text
+      noindex      keeps the page out of search engines and out of sitemap.xml
+      mainClass    extra classes on <main>, which is a .container unless `wide` is set
+      wide         the page lays out its own full-width sections
+#}
+{%- set pageTitle = metaTitle or ((title + " — " + site.name) if title else site.name) %}
+{%- set pageUrl = site.url + page.url %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ pageTitle }}</title>
+    {%- if description %}
+    <meta name="description" content="{{ description }}">
+    {%- endif %}
+    {%- if noindex %}
+    <meta name="robots" content="noindex, follow">
+    {%- else %}
+    <link rel="canonical" href="{{ pageUrl }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ site.name }}">
+    <meta property="og:title" content="{{ metaTitle or title or site.name }}">
+    {%- if description %}
+    <meta property="og:description" content="{{ description }}">
+    {%- endif %}
+    <meta property="og:url" content="{{ pageUrl }}">
+    <meta property="og:image" content="{{ site.url }}{{ site.image }}">
+    <meta name="twitter:card" content="summary">
+    {%- endif %}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    {# Accounts, bank connections and syncing need a signed-in user, so they are on app.aussiebankfeeds.com (site.app). #}
+    <header class="site-header">
+        <div class="container">
+            <a href="/" class="brand"><span class="brand-mark">A</span>AussieBankFeeds</a>
+            <nav class="site-nav">
+                <a href="/#how-it-works">How It Works</a>
+                <a href="/#faq">FAQ</a>
+                <a href="{{ site.app }}" class="btn">Sign In</a>
+            </nav>
+        </div>
+    </header>
+
+    <main{% if not wide %} class="container{% if mainClass %} {{ mainClass }}{% endif %}"{% endif %}>
+        {{ content | safe }}
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div>AussieBankFeeds — bank feeds for <a href="https://www.manager.io">Manager.io</a></div>
+            <div>
+                <a href="/consent/">How We Handle Your Data</a> ·
+                <a href="{{ site.app }}/support">Support</a> ·
+                <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,110 @@
+---
+layout: layout.njk
+metaTitle: AussieBankFeeds — Bank Feeds for Manager.io
+description: Automatic bank feeds for Australian businesses using Manager.io accounting software. Connect your bank accounts and import transactions automatically.
+wide: true
+steps:
+  - title: Create an Account
+    description: Sign up with just your email.
+  - title: Connect Your Bank
+    description: Securely link your Australian bank accounts through our banking partner.
+  - title: Import into Manager.io
+    description: Transactions sync automatically. Your books stay up to date without lifting a finger.
+features:
+  - title: Automated Sync
+    description: Transactions flow automatically from your bank into Manager.io. No manual imports.
+  - title: Bank-Grade Security
+    description: Your credentials are never stored. Secure, read-only access through trusted banking APIs.
+  - title: All Major Banks
+    description: Supports the Big Four and 100+ Australian financial institutions.
+checklist:
+  - Works with all Manager.io editions
+  - Installs from the Extensions screen in Manager
+  - Daily automatic transaction imports
+  - Supports multiple bank accounts
+---
+<section class="hero">
+    <h1>Bank Feeds for <span>Manager.io</span></h1>
+    <p>Automatically import transactions from your Australian bank accounts directly into <a href="https://www.manager.io">Manager.io</a> accounting software. No manual CSV uploads.</p>
+    <div class="hero-actions">
+        <a href="{{ site.app }}/install" class="btn btn-lg">Install</a>
+        <a href="{{ site.app }}" class="btn btn-secondary btn-lg">Sign In</a>
+    </div>
+    <p class="hero-note">For Australian businesses using Manager.io.</p>
+</section>
+
+<section class="section" id="how-it-works">
+    <div class="container">
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-lead">Connect your bank, and transactions flow automatically into Manager.io. Three steps, zero hassle.</p>
+        <ol class="steps">
+            {%- for step in steps %}
+            <li>
+                <h3>{{ step.title }}</h3>
+                <p>{{ step.description }}</p>
+            </li>
+            {%- endfor %}
+        </ol>
+    </div>
+</section>
+
+<section class="section section-alt">
+    <div class="container">
+        <h2 class="section-title">Why AussieBankFeeds?</h2>
+        <div class="feature-grid">
+            {%- for feature in features %}
+            <div class="feature">
+                <h3>{{ feature.title }}</h3>
+                <p>{{ feature.description }}</p>
+            </div>
+            {%- endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Built for Manager.io</h2>
+        <div class="built-for">
+            <div>
+                <p><a href="https://www.manager.io">Manager.io</a> is powerful, free accounting software used by businesses worldwide. But until now, Australian users had no way to get automatic bank feeds.</p>
+                <p>AussieBankFeeds bridges that gap. We connect directly to your bank and deliver transactions straight into Manager.io, so you can spend less time on data entry and more time running your business.</p>
+            </div>
+            <ul class="checklist">
+                {%- for item in checklist %}
+                <li>{{ item }}</li>
+                {%- endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="section section-alt" id="faq">
+    <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq">
+            <details>
+                <summary>How do I install it?</summary>
+                <p>Open the Manager app, go to Extensions, and click the Aussie Bank Feeds extension. Pick the business to install it into, then open that business's Bank and Cash Accounts tab and click the Aussie Bank Feeds button.</p>
+            </details>
+            <details>
+                <summary>Do you see my banking password?</summary>
+                <p>No. Your bank is connected through <a href="https://basiq.io">Basiq</a>, an Accredited Data Recipient under Australia's Consumer Data Right. You give consent with your bank directly, access is read-only, and you never share your banking credentials with us.</p>
+            </details>
+            <details>
+                <summary>Can I stop sharing my bank data?</summary>
+                <p>At any time. Sign in, open Connections and withdraw consent for the bank connection, which stops any further data being collected from it. <a href="/consent/">How we handle your data</a> explains this in full.</p>
+            </details>
+            <details>
+                <summary>How do I get help?</summary>
+                <p>Email <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
+            </details>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <h2>Ready to automate your bank feeds?</h2>
+    <p>Join Australian businesses already saving hours on bookkeeping.</p>
+    <a href="{{ site.app }}/install" class="btn btn-lg">Install</a>
+</section>
