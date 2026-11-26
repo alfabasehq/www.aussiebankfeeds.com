@@ -46,7 +46,8 @@ is built from that one value.
 - `/sync` matters most: Manager businesses that installed the extension before the move have
   `https://aussiebankfeeds.com/sync` saved as its endpoint, so Manager still opens that address in its
   extension frame. It reaches the app only if the bare domain `aussiebankfeeds.com` also ends up at this
-  site (see Custom domain). Reinstalling the extension from the app saves the new endpoint.
+  site (see Custom domain). Nothing is installed any more: the app is opened from Manager's Extensions
+  screen, and the app's own `/install` just redirects to `/sync`.
 - That forwarding is a script in a page, so it works for people and not for programs. Nothing answers
   at `/api/...` here.
 
