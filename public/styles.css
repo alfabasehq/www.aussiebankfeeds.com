@@ -390,6 +390,45 @@ a {
     color: var(--text-muted);
 }
 
+/* Pricing page */
+.price-card {
+    max-width: 26rem;
+    margin: 0 auto;
+    padding: 2.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    text-align: center;
+}
+
+.price {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.price-amount {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--text);
+}
+
+.price-note {
+    margin: 0.25rem 0 1.5rem;
+    color: var(--text-muted);
+}
+
+.price-card .checklist {
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.price-card .btn {
+    display: block;
+}
+
 /* Text pages (consent, not found) */
 .page-kicker {
     margin: 2.5rem 0 0;

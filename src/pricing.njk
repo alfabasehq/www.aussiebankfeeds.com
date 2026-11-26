@@ -1,0 +1,29 @@
+---
+layout: layout.njk
+title: Pricing
+description: AussieBankFeeds costs a flat $19 AUD per month for unlimited connected bank accounts and unlimited bank transactions across unlimited businesses.
+wide: true
+included:
+  - Unlimited connected bank accounts
+  - Unlimited bank transactions
+  - Unlimited businesses
+---
+<section class="hero">
+    <h1>One flat fee, <span>everything unlimited</span></h1>
+    <p>No tiers and no per-account or per-transaction charges. The price stays the same however many bank accounts and businesses you add.</p>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="price-card">
+            <p class="price"><span class="price-amount">$19</span> AUD / month</p>
+            <p class="price-note">Flat fee</p>
+            <ul class="checklist">
+                {%- for item in included %}
+                <li>{{ item }}</li>
+                {%- endfor %}
+            </ul>
+            <a href="{{ site.app }}" class="btn btn-lg">Get Started</a>
+        </div>
+    </div>
+</section>

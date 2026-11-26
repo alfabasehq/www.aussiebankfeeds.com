@@ -19,6 +19,7 @@ Pushing to `main` builds and deploys the site (`.github/workflows/pages.yml`).
 | Path | What it holds |
 |---|---|
 | `src/index.njk` | Home page: hero, how it works, features and FAQ |
+| `src/pricing.njk` | Pricing page: the flat monthly fee and what it covers |
 | `src/consent.njk` | CDR consent information ("How we handle your data") |
 | `src/404.njk` | Not-found page, which also forwards the addresses that moved to the app (see below) |
 | `src/_includes/layout.njk` | Page shell: head, header and footer |
